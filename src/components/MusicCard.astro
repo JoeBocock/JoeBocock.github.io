@@ -1,0 +1,47 @@
+---
+interface Props {
+  src: string
+  srcSet: string
+  title: string
+  artist: string
+  link: string
+}
+
+const {src, srcSet, title, artist, link} = Astro.props
+---
+
+<div class="bg-snow-1 flex p-2 rounded-md card">
+    <img
+        class="rounded-md border-2 border-polar-1"
+        width="85px"
+        aria-hidden="false"
+        draggable="false"
+        src={src}
+        alt={title}
+        srcset={srcSet}
+        sizes="(min-width: 1280px) 232px, 192px"
+    />
+    <div class="flex flex-col my-auto ml-3 mr-6 w-full">
+        <div class="font-bold">{title}</div>
+        <small>{artist}</small>
+    </div>
+
+    <a target="_blank" rel="noopener noreferrer" href={link} class="relative cursor-pointer">
+        <svg
+            class="absolute -bottom-1 -right-1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><circle cx="12" cy="12" r="10"></circle><circle
+                cx="12"
+                cy="12"
+                r="3"></circle></svg
+        >
+    </a>
+</div>

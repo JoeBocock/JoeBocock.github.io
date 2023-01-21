@@ -1,0 +1,283 @@
+---
+import Container from '../components/Container.astro'
+import GradientTitle from '../components/GradientTitle.astro'
+import LabelSet from '../components/LabelSet.astro'
+import LinkButton from '../components/LinkButton.astro'
+import MusicCard from '../components/MusicCard.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+import ArrowRight from '../components/svg/ArrowRight.astro'
+import CodePen from '../components/svg/CodePen.astro'
+import Dislike from '../components/svg/Dislike.astro'
+import Email from '../components/svg/Email.astro'
+import Github from '../components/svg/Github.astro'
+import Heart from '../components/svg/Heart.astro'
+import Like from '../components/svg/Like.astro'
+import LinkedIn from '../components/svg/LinkedIn.astro'
+import Paddle from '../components/svg/Paddle.astro'
+import Twitter from '../components/svg/Twitter.astro'
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Joe Bocock | Home" contained={false}>
+    <div class="absolute top-5 right-5 text-white">
+        <a href="/articles" class="theme-button"
+            ><div class="flex">Blog <ArrowRight /></div></a
+        >
+    </div>
+
+    <div
+        class="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl text-black opacity-50"
+    >
+        <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+                d="M9.17154 16.8182L7.75732 18.2324L12 22.475L16.2426 18.2324L14.8284 16.8182L12 19.6466L9.17154 16.8182Z"
+                fill="currentColor"></path><path
+                d="M14.8284 7.182L16.2426 5.76779L12 1.52515L7.75733 5.76779L9.17155 7.182L12 4.35357L14.8284 7.182Z"
+                fill="currentColor"></path><path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 9.00018C13.6569 9.00018 15 10.3433 15 12.0002C15 13.657 13.6569 15.0002 12 15.0002C10.3431 15.0002 9 13.657 9 12.0002C9 10.3433 10.3431 9.00018 12 9.00018ZM12 11.0002C12.5523 11.0002 13 11.4479 13 12.0002C13 12.5525 12.5523 13.0002 12 13.0002C11.4477 13.0002 11 12.5525 11 12.0002C11 11.4479 11.4477 11.0002 12 11.0002Z"
+                fill="currentColor"></path></svg
+        >
+    </div>
+
+    <Container>
+        <div class="flex flex-col justify-center min-h-screen">
+            <div class="m-4">
+                <h1
+                    id="main-title"
+                    class="font-bold text-7xl bg-clip-text text-transparent"
+                >
+                    Hello.
+                </h1>
+
+                <GradientTitle>Hello.</GradientTitle>
+
+                <h3 class="font-bold text-3xl md:text-4xl pt-2">
+                    I'm Joe, a software engineer from the UK.
+                </h3>
+                <div class="text-xl md:text-2xl pt-8">
+                    I like to build things. Currently working at <Paddle />
+                    in the developer experience team. I adore learning new tech,
+                    meeting fresh faces and writing about anything. You can read
+                    more about me <a href="/profile" class="underline">here.</a>
+                </div>
+                <div class="flex text-white pt-4 space-x-4 hidden xs:flex">
+                    <LinkButton link="mailto:joebocock@gmail.com">
+                        <Email />
+                    </LinkButton>
+
+                    <LinkButton link="https://github.com/joebocock">
+                        <Github />
+                    </LinkButton>
+
+                    <LinkButton link="https://twitter.com/Joe_Bocock">
+                        <Twitter />
+                    </LinkButton>
+
+                    <LinkButton
+                        link="https://www.linkedin.com/in/joe-bocock-976341181"
+                    >
+                        <LinkedIn />
+                    </LinkButton>
+
+                    <LinkButton link="https://codepen.io/joebocock">
+                        <CodePen />
+                    </LinkButton>
+                </div>
+            </div>
+        </div>
+    </Container>
+
+    <div class="bg-polar-1 border-y-4 border-polar-4 pb-16">
+        <Container>
+            <div class="px-6">
+                <h3 class="text-white font-bold text-4xl md:text-5xl pt-12">
+                    Technology
+                </h3>
+                <span class="text-white"
+                    >Forever trying to learn something new.</span
+                >
+            </div>
+            <div
+                class="flex flex-col md:flex-row py-4 mt-4 space-y-8 md:space-y-0"
+            >
+                <div class="mx-6 md:w-1/3 rounded-md bg-snow-1 p-2 card">
+                    <div class="flex justify-between">
+                        <Heart />
+                        <i>loves</i>
+                    </div>
+
+                    <hr class="px-4 my-3 border-2 border-polar-1 rounded-md" />
+
+                    <LabelSet
+                        labels={[
+                            'php',
+                            'docker',
+                            'go',
+                            'next',
+                            'astro',
+                            'godot',
+                            'typescript',
+                            'macOS',
+                            'laravel',
+                            'linux',
+                            'vue',
+                        ]}
+                    />
+                </div>
+
+                <div class="mx-6 md:w-1/3 rounded-md bg-snow-1 p-2 card">
+                    <div class="flex justify-between">
+                        <Like />
+                        <i>likes</i>
+                    </div>
+
+                    <hr class="px-4 my-3 border-2 border-polar-1 rounded-md" />
+
+                    <LabelSet
+                        labels={[
+                            'javascript',
+                            'mysql',
+                            'css',
+                            'bash',
+                            'git',
+                            'sass',
+                            'traefik',
+                            'unity',
+                            'node',
+                            'dx',
+                            'design',
+                            'tailwind',
+                        ]}
+                    />
+                </div>
+                <div class="mx-6 md:w-1/3 rounded-md bg-snow-1 p-2 card">
+                    <div class="flex justify-between">
+                        <Dislike />
+                        <i>dislikes</i>
+                    </div>
+
+                    <hr
+                        class="px-4 my-3 border-2 border-polar-1 rounded-full"
+                    />
+
+                    <LabelSet
+                        labels={[
+                            'npm',
+                            'codeigniter\xa03',
+                            'vim',
+                            'cryptozoo',
+                            'material',
+                            'vagrant',
+                            'big\xa0o',
+                            'windows',
+                        ]}
+                    />
+                </div>
+            </div>
+
+            <hr
+                class="mx-6 px-2 my-8 border-4 border-snow-1 rounded-full shadow"
+            />
+
+            <div class="px-6">
+                <h3 class="text-white font-bold text-4xl md:text-5xl pt-8">
+                    Music
+                </h3>
+                <span class="text-white"
+                    >Top listened to tracks this month, pulled from Spotify.</span
+                >
+            </div>
+
+            <div
+                class="px-6 mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+            >
+                <MusicCard
+                    src="https://i.scdn.co/image/ab67616d00001e02a9212ccbd377bb6939c844a2"
+                    srcSet="https://i.scdn.co/image/ab67616d00001e02a9212ccbd377bb6939c844a2 150w, https://i.scdn.co/image/ab67616d00001e02a9212ccbd377bb6939c844a2 300w, https://i.scdn.co/image/ab67616d0000b273a9212ccbd377bb6939c844a2 320w, https://i.scdn.co/image/ab67616d0000b273a9212ccbd377bb6939c844a2 640w"
+                    title="Lisbon"
+                    artist="Slim & The Beast"
+                    link="https://open.spotify.com/track/3pZxRw0Zf3vCDTxUNgP3Zz?si=af1a2ee752e341a2"
+                />
+
+                <MusicCard
+                    src="https://i.scdn.co/image/ab67616d00001e02b8119ebbfb99fe8d2ea0051b"
+                    srcSet="https://i.scdn.co/image/ab67616d00001e02b8119ebbfb99fe8d2ea0051b 150w, https://i.scdn.co/image/ab67616d00001e02b8119ebbfb99fe8d2ea0051b 300w, https://i.scdn.co/image/ab67616d0000b273b8119ebbfb99fe8d2ea0051b 320w, https://i.scdn.co/image/ab67616d0000b273b8119ebbfb99fe8d2ea0051b 640w"
+                    title="Tinder Samurai"
+                    artist="Samsa"
+                    link="https://open.spotify.com/track/0sE5n8rvPsPD7LfS1HXuOg?si=e9827099a36542a2"
+                />
+
+                <MusicCard
+                    src="https://i.scdn.co/image/ab67616d00001e02dab5523b4d23634dccce5105"
+                    srcSet="https://i.scdn.co/image/ab67616d00001e02dab5523b4d23634dccce5105 150w, https://i.scdn.co/image/ab67616d00001e02dab5523b4d23634dccce5105 300w, https://i.scdn.co/image/ab67616d0000b273dab5523b4d23634dccce5105 320w, https://i.scdn.co/image/ab67616d0000b273dab5523b4d23634dccce5105 640w"
+                    title="The Reckless and the Brave"
+                    artist="All Time Low"
+                    link="https://open.spotify.com/track/2oiPju78ZfnBRePyM95iq6?si=8a9a10b74c2440ab"
+                />
+
+                <MusicCard
+                    src="https://i.scdn.co/image/ab67616d00001e029478c87599550dd73bfa7e02"
+                    srcSet="https://i.scdn.co/image/ab67616d00001e029478c87599550dd73bfa7e02 150w, https://i.scdn.co/image/ab67616d00001e029478c87599550dd73bfa7e02 300w, https://i.scdn.co/image/ab67616d0000b2739478c87599550dd73bfa7e02 320w, https://i.scdn.co/image/ab67616d0000b2739478c87599550dd73bfa7e02 640w"
+                    title="Myself"
+                    artist="Post Malone"
+                    link="https://open.spotify.com/track/2cvOfKHOHgwQlLiuLKP2xR?si=2d1ec4df6a7a4327"
+                />
+
+                <MusicCard
+                    src="https://i.scdn.co/image/ab67616d00001e022055154ac5c7937ca4fc939d"
+                    srcSet="https://i.scdn.co/image/ab67616d00001e022055154ac5c7937ca4fc939d 150w, https://i.scdn.co/image/ab67616d00001e022055154ac5c7937ca4fc939d 300w, https://i.scdn.co/image/ab67616d0000b2732055154ac5c7937ca4fc939d 320w, https://i.scdn.co/image/ab67616d0000b2732055154ac5c7937ca4fc939d 640w"
+                    title="Day 39/167"
+                    artist="Fran Vasilić"
+                    link="https://open.spotify.com/track/30n5TjPEPE73LYlwpMM8Aa?si=851c33819b184669"
+                />
+
+                <MusicCard
+                    src="https://i.scdn.co/image/ab67616d00001e02e54b2a5993ee4f767e1167fb"
+                    srcSet="https://i.scdn.co/image/ab67616d00001e02e54b2a5993ee4f767e1167fb 150w, https://i.scdn.co/image/ab67616d00001e02e54b2a5993ee4f767e1167fb 300w, https://i.scdn.co/image/ab67616d0000b273e54b2a5993ee4f767e1167fb 320w, https://i.scdn.co/image/ab67616d0000b273e54b2a5993ee4f767e1167fb 640w"
+                    title="At the Cookout"
+                    artist="Akintoye"
+                    link="https://open.spotify.com/track/6I6kHF6n4GeqlatNPCalCN?si=1aa59026006c48d3"
+                />
+            </div>
+        </Container>
+    </div>
+
+    <Container>
+        <div class="px-6">
+            <h3 class="font-bold text-4xl md:text-5xl pt-14">Projects</h3>
+            <span>Dumb things I've made for fun.</span>
+        </div>
+
+        <div
+            class="my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-6"
+        >
+            <ProjectCard
+                src="https://github.com/JoeBocock/joebocock.com"
+                title="joebocock.com"
+                description="The very site you're looking at! Made with ❤️ in Astrojs, mainly as a learning experience and as a chance to explore some new tech."
+                tech="typescript • astro • tailwind"
+            />
+
+            <ProjectCard
+                src="https://github.com/JoeBocock/void-trader"
+                title="Void Trader"
+                description="A silly little oh-my-zsh plugin that tracks when & where the void trader will appear in Warframe."
+                tech="bash • zsh • oh-my-zsh"
+            />
+
+            <ProjectCard
+                src="https://github.com/JoeBocock/knockt"
+                title="Knockt"
+                description="A Laravel powered API & framework learning tool. Intended to display the best working practices for someone tackling an API in Laravel."
+                tech="bash • zsh • oh-my-zsh"
+            />
+        </div>
+    </Container>
+</Layout>

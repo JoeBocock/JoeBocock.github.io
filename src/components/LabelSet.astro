@@ -1,0 +1,17 @@
+---
+import Label from './Label.astro';
+
+interface Props {
+  labels: Array<string>;
+}
+
+const {labels} = Astro.props
+---
+
+<div class="flex flex-wrap text-sm text-white">
+    {
+        labels.map(label => (
+            <Label>{label}</Label>
+        ))
+    }
+</div>
