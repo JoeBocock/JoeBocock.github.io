@@ -1,0 +1,52 @@
+---
+import CodePen from "./svg/CodePen.astro";
+import Email from "./svg/Email.astro";
+import Github from "./svg/Github.astro";
+import LinkedIn from "./svg/LinkedIn.astro";
+---
+
+<hr class="h-px my-2 bg-gray-200 border-0" />
+
+<div class="flex flex-col items-center pb-8">
+    <div class="flex space-x-2 mt-2">
+        <button onclick="history.back()" class="hover:underline">go back</button
+        >
+        <span class="my-auto text-gray-400">•</span>
+        <a class="hover:underline" href="/">home</a>
+    </div>
+
+    <div class="flex space-x-4 items-center pt-4">
+        <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="mailto:joebocock@gmail.com"
+            class="hover:text-frost-4"
+        >
+            <Email />
+        </a>
+        <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/joebocock"
+            class="hover:text-frost-4"
+        >
+            <Github />
+        </a>
+        <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/joe-bocock-976341181"
+            class="hover:text-frost-4"
+        >
+        <LinkedIn />
+        </a>
+        <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://codepen.io/joebocock"
+            class="hover:text-frost-4"
+        >
+            <CodePen />
+        </a>
+    </div>
+</div>

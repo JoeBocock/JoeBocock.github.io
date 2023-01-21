@@ -1,0 +1,65 @@
+---
+import Layout from './Layout.astro'
+import type { MarkdownLayoutProps } from 'astro'
+import Footer from '../components/Footer.astro'
+import ArrowLeft from '../components/svg/ArrowLeft.astro'
+import ArrowRight from '../components/svg/ArrowRight.astro'
+
+type Props = MarkdownLayoutProps<{
+    title: string
+    author: string
+    date: string
+    tags: Array<string>
+}>
+
+const { frontmatter } = Astro.props
+const { title, date, tags } = frontmatter
+---
+
+<Layout title={'Joe Bocock | ' + title}>
+    <div class="absolute top-5 right-5 text-white">
+        <button onclick="history.back()" class="theme-button"
+            ><div class="flex"> <ArrowLeft /> Back</div></button
+        >
+    </div>
+
+    <main class="mt-12 p-8">
+        <h1 class="font-bold text-3xl md:text-5xl">{title}</h1>
+        <div class="mt-2 flex flex-col md:flex-row">
+            <span class="my-auto text-sm text-gray-500"
+                >{
+                    new Date(date).toLocaleDateString(undefined, {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                    })
+                }</span
+            >
+            <span class="my-auto text-gray-400 hidden md:block mx-1">•</span>
+            <div class="my-auto flex space-x-1">
+                {
+                    tags.map(tag => (
+                        <span class="text-sm text-gray-500">#{tag}</span>
+                    ))
+                }
+            </div>
+        </div>
+
+        <div class="mt-4 mb-16 text-lg">
+            <slot />
+        </div>
+
+        <Footer />
+    </main>
+</Layout>
+
+<style is:global>
+    h2 {
+        @apply text-3xl mt-8;
+    }
+
+    pre {
+        @apply pb-8 rounded-md;
+    }
+</style>

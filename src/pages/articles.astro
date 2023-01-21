@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro'
+import ArticleCard from '../components/ArticleCard.astro'
+import Footer from '../components/Footer.astro'
+import ArrowLeft from '../components/svg/ArrowLeft.astro';
+
+const posts = (await Astro.glob('./articles/*.{md,mdx}')).sort(
+    (a, b) =>
+        new Date(b.frontmatter.date).valueOf() -
+        new Date(a.frontmatter.date).valueOf()
+)
+---
+
+<Layout title="Joe Bocock | Articles">
+    <div class="absolute top-5 right-5 text-white">
+        <button onclick="history.back()" class="theme-button"
+            ><div class="flex"> <ArrowLeft /> Back</div></button
+        >
+    </div>
+
+    <main class="mt-12 p-8">
+        <h1 class="font-bold text-6xl">Articles</h1>
+        <p>Come read some of my awful writing.</p>
+
+        <div class="mt-8">
+            {
+                posts.map((post, index) => (
+                    <ArticleCard
+                        slug={post.frontmatter.slug}
+                        title={post.frontmatter.title}
+                        description={post.frontmatter.description}
+                        date={post.frontmatter.date}
+                    />
+                ))
+            }
+        </div>
+
+        <Footer />
+    </main>
+</Layout>
+
+<style></style>

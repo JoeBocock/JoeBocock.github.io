@@ -1,0 +1,66 @@
+---
+layout: ../../layouts/Markdown.astro
+title: Thinking green in web development
+slug: thinking-green-in-web-development
+description: "Considering the health of the planet isn't something most developers do when working on a project, but should it be? There's many small ways we can shape our applications to aid in decreasing our carbon output - so let's discuss."
+date: '2022-05-25'
+tags: ['eco', 'code', 'green']
+---
+
+<img class="rounded-md" src="/images/earth.jpg" />
+
+<br />
+
+It’s easy to understand why most developers don’t consider the impact their services might have on the environment. When software engineers sit down to conceptualise a project, it’s not exactly something on the checklist. But should it be? And how can we, as developers, take small but meaningful steps to help lower the impacts our work has on the planet.
+
+<br />
+
+Did you know that the folks over at WebsiteCarbon estimate that <a href="https://www.websitecarbon.com/" target="_blank" rel="noopener noreferrer" class="underline text-nord-350 hover:text-nord-375">the average web page produces&nbsp;0.54 grams of&nbsp;CO2 per page view?</a> For a website with 10,000 monthly page views, that's&nbsp;65 kg of&nbsp;CO2 per year. You can even test your own site with their tools - <a href="https://www.websitecarbon.com/website/rebootrocket-com/" target="_blank" rel="noopener noreferrer" class="underline text-nord-350 hover:text-nord-375">the results for RebootRocket can be seen here.</a>. With all those very depressing statistics about our footprint on the planet, the question arises - what can we do about it?
+
+<br />
+
+Before mentioning the steps we can take, maybe it’s a good idea to remind ourselves of the main goal. In the perfect (and unrealistic) world, we’d produce no carbon dioxide at all. This obviously isn’t feasible in a world like ours. Instead, we reach for the next best thing, going carbon neutral.
+
+<br />
+
+## Hosting responsibly
+
+<br />
+
+The first and often hardest step to take is choosing a green web host. Making sure you’re using a verified green web host means that your service is running on 100% renewable energy, or at least, that the data centres you leverage are committed to doing so. The Green Web Foundation provides a <a href="https://www.thegreenwebfoundation.org/directory/" target="_blank" rel="noopener noreferrer" class="underline text-nord-350 hover:text-nord-375">directory of hosts who’ve provided proof of their green claims</a>.
+
+<br />
+
+Sadly, for a lot of companies, moving their entire hosted infrastructure to another provider is no small task. So maybe we should be asking, what can we as individuals do? Some small choices we make while developing could have huge impacts on the emissions of our websites.
+
+<br />
+
+## Usability, images and videos
+
+<br />
+
+Often, solving common design flaws can actually help when talking about your carbon output. If users constantly struggle to navigate your website or the amount of clicks to complete simple actions are higher than necessary, CO2 output will naturally increase. Having a clean, fast and easy to navigate website goes a long way.
+
+<br />
+
+Media is also a major component of this problem. Excessive or large resolution images and videos can often be the sole reason a websites carbon score takes a nosedive. While it’s a major part of what we do on the web, designs can be built around not having as much media content - which often has the added benefit of becoming more accessible.
+
+<br />
+
+## SEO and optimising for crawlers
+
+<br />
+
+In the ideal situation, crawler interactions should be as minimal as possible, right? I mean, it’s a win-win. Google doesn’t expend resources crawling pages that haven’t changed, and our services don’t see load increases from constant unnecessary indexing. In practice, the system doesn’t work like this though. Cloudflare studied their massive sets of crawler data and found that <a href="https://blog.cloudflare.com/crawler-hints-how-cloudflare-is-reducing-the-environmental-impact-of-web-searches/" target="_blank" rel="noopener noreferrer" class="underline text-nord-350 hover:text-nord-375">53% of good bot traffic is wasted</a> on crawling content that hasn’t changed.
+
+<br />
+
+Naturally, this would lead us to finding ways of reducing wasted crawler operations. Enter Cloudflare, with Crawler Hints. Thanks to the mass amount of content data that Cloudflare inherently knows about your sites, this <strong>free</strong> feature can inform search engines when specific content has <em>actually</em> changed, preventing resources from being wasted on pointless indexing.
+
+<br />
+
+## Implementation, understanding and consistency
+
+<br />
+
+Taking everything we’ve mentioned into account, implementing a lot of these steps can be quite easy if caught early on. On the surface, it’s more work, but in reality it fits well into the existing workflow a developer might have. We already consider speed, usability, code efficiency, accessibility and more. One day, adding environmental impacts to that list will hopefully be implied rather than forgotten.

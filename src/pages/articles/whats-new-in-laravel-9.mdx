@@ -1,0 +1,96 @@
+---
+layout: ../../layouts/Markdown.astro
+title: What's new in Laravel 9
+slug: whats-new-in-laravel-9
+description: 'Today we take a short and sweet look at some of the new features Laravel 9 provides as well as the required changes developers should be aware of. From Blade quality of life updates to a beautiful new route list, Laravel 9 is a welcome update to the brilliant framework.'
+date: '2022-05-23'
+tags: ['php', 'code', 'laravel']
+---
+
+import Code from 'astro/components/Code.astro'
+
+So I'm a bit late to the party on this one, but in fairness, this website didn't exist when Laravel 9 was released. Regardless of the fact I'm three months late, there's still some interesting changes that we can take a quick look through!
+
+<br />
+
+Last year, the Laravel team transitioned from a six month release schedule to a yearly one.{' '}<a href="https://blog.laravel.com/updates-to-laravels-versioning-policy" target="_blank" rel="noopener noreferrer" class="underline text-nord-350 hover:text-nord-375"> In a Laravel blog post</a>, Taylor Otwell said this change will "ease the the maintenance burden on our community" and "challenge us as Laravel developers to implement high-value, amazing features". We've already seen the benefits of this change, with features such as parallel testing being back-ported to Laravel 8.
+
+<br />
+
+Before we jump in, I should note that with Laravel 9 comes a new minimum PHP version requirement of 8.0. This can be attributed to the Symfony minimum bump to 6.0 - which also shares the same PHP version requirement. Just something to keep in mind when considering the upgrade. Oh, and I don't plan on mentioning every update or change, but if that's what you're looking for,{' '}<a href="https://laravel.com/docs/9.x/releases" target="_blank" rel="noopener noreferrer" class="underline text-nord-350 hover:text-nord-375"> the full release notes can be found here.</a>
+
+<br />
+
+## Route:list gets a makeover
+
+<br />
+
+The very useful listing command for all your application's routes just got an upgrade! Looking fresher than the prince of bel air, this more condensed but meaningful view should be a sight for sore eyes.
+
+<br />
+
+<img class="rounded-md" src="/images/route-list.jpg" />
+
+<br />
+
+## Group routes by controller
+
+<br />
+
+There's many ways to group routes in Laravel and most provide inherent functionality. Well, now there's another, group by controller! Grouping this way will provide context to the contained routes, removing the need to provide the controller - leading to a slightly cleaner route declaration.
+
+<br />
+
+<Code theme="nord" code={`
+    use App\Http\Controllers\TagController;
+
+    Route::controller(TagController::class)->group(function () {
+        Route::get('/tags', 'index'); Route::get('/tags/{id}', 'show');
+    });
+
+`} lang="php" />
+
+<br />
+
+## Breeze pre-configured for APIs
+
+<br />
+
+Laravel Breeze is a basic full stack authentication implementation for new applications and now it supports API configuration, straight out of the box. This setup is great for projects with independent JavaScript-based frontends.
+
+<br />
+
+<Code
+    theme="nord"
+    code={`
+    $ php artisan breeze:install api
+`}
+    lang="shell"
+/>
+
+<br />
+
+So the next time you decide to reach for Next, Nuxt or any other JavaScript application framework and need an API to power it, Laravel is ready to go. Also released alongside this feature was <a href="https://github.com/laravel/breeze-next" target="_blank" rel="noopener noreferrer" class="underline text-nord-350 hover:text-nord-375">an example Next.js implementation,</a> so you can get started on your idea with a solid foundation on both ends.
+
+<br />
+
+## New helpers enter the fray
+
+<br />
+
+Two new helpers have been added, making existing functionality easier to work with. The first of which makes building the already existing String class cleaner, acting as <span class="bg-snow-3 inline-block px-1 text-orange-500">Str::of</span>. The second new helper provides a simple way of creating a redirect response, based on the route name.
+
+<br />
+
+<Code theme="nord" code={`
+    $slug = str('My Tag Slug')->slug();
+
+    // my-tag-slug
+
+    return to_route('tags.show', ['tag' => $slug]);
+
+`} lang="php" />
+
+<br />
+
+Like I said earlier, this isn't every change in Laravel 9. I'd rather categorise these as 'at a glance' features. Or, in other words, they're easy to understand when just looking at the implementation, which works great in an article format.

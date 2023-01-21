@@ -1,0 +1,25 @@
+---
+const { link } = Astro.props
+---
+
+<a target="_blank" rel="noopener noreferrer" href={link} class="link-button cursor-pointer">
+    <slot />
+</a>
+
+<style>
+    .link-button {
+        @apply bg-polar-1 border-2 border-polar-3 px-3 py-1 rounded-full;
+        position: relative;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        transition: box-shadow 0.35s, top 0.3s, transform 0.45s;
+        box-shadow: 1px 1px 0 0 #3b4252, 0 2px 0 0 #3b4252, 0 3px 0 0 #3b4252;
+    }
+
+    .link-button:hover {
+        top: 3px;
+        box-shadow: 0 0 0 0;
+        transform: rotate(3deg);
+    }
+</style>

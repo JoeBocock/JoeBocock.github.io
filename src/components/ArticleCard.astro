@@ -1,0 +1,38 @@
+---
+import ArrowRight from "./svg/ArrowRight.astro";
+
+const {slug, title, description, date} = Astro.props;
+---
+
+<div class="mt-8">
+    <a
+        href={'/articles/' + slug}
+        class="text-2xl font-bold hover:underline"
+    >
+        {title}
+    </a>
+    <p class="py-4">{description}</p>
+
+    <div class="flex justify-between">
+        <small>
+            {new Date(
+                date
+            ).toLocaleDateString(undefined, {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+            })}
+        </small>
+
+        <a
+            class="flex hover:underline"
+            href={'/articles/' + slug}
+        >
+            read more{' '}
+            <ArrowRight />
+        </a>
+    </div>
+
+    <hr class="h-2 rounded-full my-3 bg-snow-3 border-0" />
+</div>

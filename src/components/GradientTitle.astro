@@ -1,0 +1,33 @@
+<h1 id="main-title" class="font-bold text-7xl bg-clip-text text-transparent">
+    <slot />
+</h1>
+
+<style>
+    #main-title {
+        --bg-size: 300%;
+        background: linear-gradient(
+                90deg,
+                #5e81ac,
+                #81a1c1,
+                #88c0d0,
+                #8fbcbb,
+                #5e81ac
+            )
+            0 0 / var(--bg-size) 100%;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        animation: move-bg 8s infinite linear;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        #main-title {
+            animation: move-bg 6s linear infinite;
+        }
+        @keyframes move-bg {
+            to {
+                background-position: var(--bg-size) 0;
+            }
+        }
+    }
+</style>
