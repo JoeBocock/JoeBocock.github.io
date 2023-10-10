@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #141414;
+    color: white;
+    line-height: 1;
+    text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+    letter-spacing: 0.125em;
+}
+
+.links {
+    position: fixed;
+    left: 50%;
+    bottom: 10px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+}
+
+.flicker {
+    animation-duration: 0.05s;
+    animation-name: flicker-keyframes;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes flicker-keyframes {
+    from {
+        text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+    }
+    to {
+        text-shadow: 4px 0.5px 2px #ea36af, -4px -0.5px 2px #75fa69;
+    }
+}
+
+.crt::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    inset: 0 0 0 0;
+    background: linear-gradient(
+            rgba(18, 16, 16, 0) 50%,
+            rgba(0, 0, 0, 0.25) 50%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 0, 0, 0.06),
+            rgba(0, 255, 0, 0.02),
+            rgba(0, 0, 255, 0.06)
+        );
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}
+
+.marquee {
+    font-size: 2rem;
+    --gap: 1rem;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+    max-width: fit-content;
+}
+
+.marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 100%;
+    animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-content {
+        animation-play-state: paused !important;
+    }
+}
