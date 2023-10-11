@@ -91,7 +91,7 @@ export default function Home() {
         <main>
             <div
                 className={
-                    'flex flex-col justify-between items-center h-[90vh] text-7xl xs:text-8xl sm:text-9xl crt p-4 lg:p-8'
+                    'flex flex-col justify-between items-center h-[85vh] text-7xl xs:text-8xl sm:text-9xl crt p-4 lg:p-8'
                 }
             >
                 <div></div>
