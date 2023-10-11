@@ -102,7 +102,7 @@ export default function Home() {
 
                 <div
                     className={
-                        'flex w-[16rem] xs:w-[22rem] sm:w-[26rem] lg:w-[28rem]'
+                        'flex w-[16rem] xs:w-[24rem] sm:w-[28rem] md:w-[29rem]'
                     }
                 >
                     <div className={'min-w-fit'}>
