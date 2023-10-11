@@ -6,20 +6,11 @@ html,
 body {
     margin: 0;
     height: 100%;
-    overflow: hidden;
     background: #141414;
     color: white;
     line-height: 1;
     text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
     letter-spacing: 0.125em;
-}
-
-.links {
-    position: fixed;
-    left: 50%;
-    bottom: 10px;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
 }
 
 .flicker {
@@ -34,7 +25,7 @@ body {
         text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
     }
     to {
-        text-shadow: 5px 0.5px 2px #ea36af, -5px -0.5px 2px #75fa69;
+        text-shadow: 4px 0.5px 2px #ea36af, -4px -0.5px 2px #75fa69;
     }
 }
 

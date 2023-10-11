@@ -87,15 +87,25 @@ export default function Home() {
     const song: string = Song()
 
     return (
-        <main className="flex h-screen text-7xl xs:text-8xl sm:text-9xl crt p-8">
-            <div className="m-auto md:max-w-[65%]">
+        <main
+            className={
+                'flex flex-col justify-between items-center h-screen text-7xl xs:text-8xl sm:text-9xl crt p-4 lg:p-8'
+            }
+        >
+            <div></div>
+
+            <div className={'md:max-w-[65%]'}>
                 <div>
                     HELLO, <br />
-                    I&#39;M <span className="flicker">JOE.</span>
+                    I&#39;M <span className={'flicker'}>JOE.</span>
                 </div>
 
-                <div className="flex w-4/5 xs:w-5/6 sm:w-4/5 md:w-5/6 lg:w-4/6">
-                    <div className="min-w-fit">
+                <div
+                    className={
+                        'flex w-[16rem] xs:w-[22rem] sm:w-[26rem] lg:w-[28rem]'
+                    }
+                >
+                    <div className={'min-w-fit'}>
                         <Image
                             src={'/spotify.svg'}
                             alt={'Spotify logo.'}
@@ -104,13 +114,17 @@ export default function Home() {
                         />
                     </div>
 
-                    <div className="bg-white text-black rounded-md marquee my-auto ml-4 italic">
-                        <ul className="marquee-content">
+                    <div
+                        className={
+                            'bg-white text-black rounded-md marquee my-auto ml-4 italic'
+                        }
+                    >
+                        <ul className={'marquee-content'}>
                             <li>&#91;{song}&#93;</li>
                             <li>&nbsp;&nbsp;</li>
                         </ul>
 
-                        <ul aria-hidden="true" className="marquee-content">
+                        <ul aria-hidden={true} className={'marquee-content'}>
                             <li>&#91;{song}&#93;</li>
                             <li>&nbsp;&nbsp;</li>
                         </ul>
@@ -118,12 +132,12 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="links text-lg flex space-x-4">
+            <div className={'links text-lg flex space-x-4'}>
                 <a
-                    className="opacity-30 hover:opacity-100"
-                    href="mailto:joebocock@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    className={'opacity-30 hover:opacity-100'}
+                    href={'mailto:joebocock@gmail.com'}
+                    target={'_blank'}
+                    rel={'noopener noreferrer'}
                 >
                     <Image
                         src={'/email.svg'}
@@ -133,10 +147,10 @@ export default function Home() {
                     />
                 </a>
                 <a
-                    className="opacity-30 hover:opacity-100"
-                    href="https://github.com/joebocock"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    className={'opacity-30 hover:opacity-100'}
+                    href={'https://github.com/joebocock'}
+                    target={'_blank'}
+                    rel={'noopener noreferrer'}
                 >
                     <Image
                         src={'/github.svg'}
@@ -146,10 +160,10 @@ export default function Home() {
                     />
                 </a>
                 <a
-                    className="opacity-30 hover:opacity-100"
-                    href="https://www.linkedin.com/in/joe-bocock-976341181/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    className={'opacity-30 hover:opacity-100'}
+                    href={'https://www.linkedin.com/in/joe-bocock-976341181/'}
+                    target={'_blank'}
+                    rel={'noopener noreferrer'}
                 >
                     <Image
                         src={'/linkedin.svg'}
@@ -159,10 +173,10 @@ export default function Home() {
                     />
                 </a>
                 <a
-                    className="opacity-30 hover:opacity-100"
-                    href="https://codepen.io/joebocock"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    className={'opacity-30 hover:opacity-100'}
+                    href={'https://codepen.io/joebocock'}
+                    target={'_blank'}
+                    rel={'noopener noreferrer'}
                 >
                     <Image
                         src={'/codepen.svg'}
