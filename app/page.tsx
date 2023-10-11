@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import { Rocket } from './rocket'
 
 const songs: string[] = [
     'Lisbon - Slim & The Beast',
@@ -87,104 +88,115 @@ export default function Home() {
     const song: string = Song()
 
     return (
-        <main
-            className={
-                'flex flex-col justify-between items-center h-screen text-7xl xs:text-8xl sm:text-9xl crt p-4 lg:p-8'
-            }
-        >
-            <div></div>
+        <main>
+            <div
+                className={
+                    'flex flex-col justify-between items-center h-[90vh] text-7xl xs:text-8xl sm:text-9xl crt p-4 lg:p-8'
+                }
+            >
+                <div></div>
 
-            <div className={'md:max-w-[65%]'}>
-                <div>
-                    HELLO, <br />
-                    I&#39;M <span className={'flicker'}>JOE.</span>
-                </div>
-
-                <div
-                    className={
-                        'flex w-[16rem] xs:w-[24rem] sm:w-[28rem] md:w-[29rem]'
-                    }
-                >
-                    <div className={'min-w-fit'}>
-                        <Image
-                            src={'/spotify.svg'}
-                            alt={'Spotify logo.'}
-                            width={44}
-                            height={44}
-                        />
+                <div className={'md:max-w-[65%]'}>
+                    <div>
+                        HELLO, <br />
+                        I&#39;M{' '}
+                        <span className={'flicker'}>
+                            JOE
+                            <Rocket />
+                        </span>
                     </div>
 
                     <div
                         className={
-                            'bg-white text-black rounded-md marquee my-auto ml-4 italic'
+                            'flex w-[16rem] xs:w-[24rem] sm:w-[28rem] md:w-[29rem]'
                         }
                     >
-                        <ul className={'marquee-content'}>
-                            <li>&#91;{song}&#93;</li>
-                            <li>&nbsp;&nbsp;</li>
-                        </ul>
+                        <div className={'min-w-fit'}>
+                            <Image
+                                src={'/spotify.svg'}
+                                alt={'Spotify logo.'}
+                                width={44}
+                                height={44}
+                            />
+                        </div>
 
-                        <ul aria-hidden={true} className={'marquee-content'}>
-                            <li>&#91;{song}&#93;</li>
-                            <li>&nbsp;&nbsp;</li>
-                        </ul>
+                        <div
+                            className={
+                                'bg-white text-black rounded-md marquee my-auto ml-4 italic'
+                            }
+                        >
+                            <ul className={'marquee-content'}>
+                                <li>&#91;{song}&#93;</li>
+                                <li>&nbsp;&nbsp;</li>
+                            </ul>
+
+                            <ul
+                                aria-hidden={true}
+                                className={'marquee-content'}
+                            >
+                                <li>&#91;{song}&#93;</li>
+                                <li>&nbsp;&nbsp;</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div className={'links text-lg flex space-x-4'}>
-                <a
-                    className={'opacity-30 hover:opacity-100'}
-                    href={'mailto:joebocock@gmail.com'}
-                    target={'_blank'}
-                    rel={'noopener noreferrer'}
-                >
-                    <Image
-                        src={'/email.svg'}
-                        alt={'Envelope'}
-                        width={28}
-                        height={28}
-                    />
-                </a>
-                <a
-                    className={'opacity-30 hover:opacity-100'}
-                    href={'https://github.com/joebocock'}
-                    target={'_blank'}
-                    rel={'noopener noreferrer'}
-                >
-                    <Image
-                        src={'/github.svg'}
-                        alt={'Github Logo'}
-                        width={28}
-                        height={28}
-                    />
-                </a>
-                <a
-                    className={'opacity-30 hover:opacity-100'}
-                    href={'https://www.linkedin.com/in/joe-bocock-976341181/'}
-                    target={'_blank'}
-                    rel={'noopener noreferrer'}
-                >
-                    <Image
-                        src={'/linkedin.svg'}
-                        alt={'LinkedIn Logo'}
-                        width={28}
-                        height={28}
-                    />
-                </a>
-                <a
-                    className={'opacity-30 hover:opacity-100'}
-                    href={'https://codepen.io/joebocock'}
-                    target={'_blank'}
-                    rel={'noopener noreferrer'}
-                >
-                    <Image
-                        src={'/codepen.svg'}
-                        alt={'Codepen Logo'}
-                        width={28}
-                        height={28}
-                    />
-                </a>
+                <div className={'links text-lg flex space-x-4'}>
+                    <a
+                        className={'opacity-30 hover:opacity-100'}
+                        href={'mailto:joebocock@gmail.com'}
+                        target={'_blank'}
+                        rel={'noopener noreferrer'}
+                    >
+                        <Image
+                            src={'/email.svg'}
+                            alt={'Envelope'}
+                            width={28}
+                            height={28}
+                        />
+                    </a>
+                    <a
+                        className={'opacity-30 hover:opacity-100'}
+                        href={'https://github.com/joebocock'}
+                        target={'_blank'}
+                        rel={'noopener noreferrer'}
+                    >
+                        <Image
+                            src={'/github.svg'}
+                            alt={'Github Logo'}
+                            width={28}
+                            height={28}
+                        />
+                    </a>
+                    <a
+                        className={'opacity-30 hover:opacity-100'}
+                        href={
+                            'https://www.linkedin.com/in/joe-bocock-976341181/'
+                        }
+                        target={'_blank'}
+                        rel={'noopener noreferrer'}
+                    >
+                        <Image
+                            src={'/linkedin.svg'}
+                            alt={'LinkedIn Logo'}
+                            width={28}
+                            height={28}
+                        />
+                    </a>
+                    <a
+                        className={'opacity-30 hover:opacity-100'}
+                        href={'https://codepen.io/joebocock'}
+                        target={'_blank'}
+                        rel={'noopener noreferrer'}
+                    >
+                        <Image
+                            src={'/codepen.svg'}
+                            alt={'Codepen Logo'}
+                            width={28}
+                            height={28}
+                        />
+                    </a>
+                </div>
             </div>
         </main>
     )

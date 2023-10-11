@@ -6,11 +6,15 @@ html,
 body {
     margin: 0;
     height: 100%;
-    background: #1f1e1e;
+    background: #141414;
     color: white;
     line-height: 1;
     text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
     letter-spacing: 0.125em;
+}
+
+.pixel-art {
+    image-rendering: pixelated;
 }
 
 .flicker {
@@ -81,5 +85,31 @@ body {
 @media (prefers-reduced-motion: reduce) {
     .marquee-content {
         animation-play-state: paused !important;
+    }
+}
+
+.flier {
+    pointer-events: none;
+}
+
+.flier > * {
+    animation: fly 4s linear;
+    pointer-events: none !important;
+    top: 0;
+    left: 0;
+    transform: translateX(-120%) translateY(-120%) rotateZ(0);
+    position: fixed;
+    animation-delay: 1s;
+    z-index: 999999;
+}
+
+@keyframes fly {
+    0% {
+        display: block;
+        transform: translateX(-200%) translateY(100vh) rotateZ(0deg);
+    }
+
+    95% {
+        transform: translateX(100vw) translateY(-100%) rotateZ(180deg);
     }
 }
