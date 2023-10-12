@@ -88,11 +88,11 @@ body {
     }
 }
 
-.flier {
+.is-flying {
     pointer-events: none;
 }
 
-.flier > * {
+.is-flying > * {
     animation: fly 4s linear;
     pointer-events: none !important;
     top: 0;
@@ -106,10 +106,50 @@ body {
 @keyframes fly {
     0% {
         display: block;
-        transform: translateX(-200%) translateY(100vh) rotateZ(0deg);
+        transform: translateX(-200%) translateY(100vh) rotateZ(45deg);
     }
 
     95% {
-        transform: translateX(100vw) translateY(-100%) rotateZ(180deg);
+        transform: translateX(110vw) translateY(-100%) rotateZ(70deg);
+    }
+}
+
+.shaking {
+    animation: shake 0.2s;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(0eg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.falling {
+    animation: falling 1s forwards;
+}
+
+@keyframes falling {
+    0% {
+        transform: translateY(0%);
+    }
+
+    5% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(105vh) translateX(-100%) rotate(15deg);
     }
 }

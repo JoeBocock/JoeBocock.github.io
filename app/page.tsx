@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { Rocket } from './rocket'
+import { Comma } from './comma'
 
 const songs: string[] = [
     'Lisbon - Slim & The Beast',
@@ -98,7 +99,8 @@ export default function Home() {
 
                 <div className={'md:max-w-[65%]'}>
                     <div>
-                        HELLO, <br />
+                        HELLO
+                        <Comma /> <br />
                         I&#39;M{' '}
                         <span className={'flicker'}>
                             JOE

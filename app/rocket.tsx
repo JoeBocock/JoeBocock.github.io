@@ -17,7 +17,7 @@ export function Rocket() {
             <span className={'select-none cursor-pointer'} onClick={onClick}>
                 .
             </span>
-            <div className={showResults ? 'flier' : 'hidden'}>
+            <div className={showResults ? 'is-flying' : 'hidden'}>
                 <Image
                     src={'/rocket.gif'}
                     alt={'Pixel art rocket'}
