@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { Rocket } from './rocket'
 import { Comma } from './comma'
+import { Search } from './search'
 
 const songs: string[] = [
     'Lisbon - Slim & The Beast',
@@ -74,9 +75,7 @@ const songs: string[] = [
 ]
 
 function Song(): string {
-    const [song, setSong] = useState<string>(
-        songs[new Date().getMinutes()] ?? songs[0]
-    )
+    const [song, setSong] = useState<string>('Loading...')
 
     useEffect(() => {
         setSong(songs[new Date().getMinutes()] ?? songs[0])
@@ -92,10 +91,10 @@ export default function Home() {
         <main>
             <div
                 className={
-                    'flex flex-col justify-between items-center h-[85vh] text-7xl xs:text-8xl sm:text-9xl crt p-4 lg:p-8'
+                    'flex flex-col justify-between items-center h-[100vh] text-7xl xs:text-8xl sm:text-9xl crt p-4 lg:p-8'
                 }
             >
-                <div></div>
+                <div className={'text-xl flex ml-auto'}>{/* <Search /> */}</div>
 
                 <div className={'md:max-w-[65%]'}>
                     <div>
@@ -199,6 +198,8 @@ export default function Home() {
                         />
                     </a>
                 </div>
+
+                <div></div>
             </div>
         </main>
     )

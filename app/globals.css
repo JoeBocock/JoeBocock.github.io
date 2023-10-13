@@ -11,6 +11,7 @@ body {
     line-height: 1;
     text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
     letter-spacing: 0.125em;
+    overflow: hidden;
 }
 
 .pixel-art {
