@@ -19,7 +19,7 @@ export function Rocket() {
             </span>
             <div className={showResults ? 'is-flying' : 'hidden'}>
                 <Image
-                    src={'/rocket.gif'}
+                    src={'/gifs/rocket.gif'}
                     alt={'Pixel art rocket'}
                     width={84}
                     height={84}

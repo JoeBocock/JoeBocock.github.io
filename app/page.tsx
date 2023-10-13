@@ -2,9 +2,9 @@
 
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { Rocket } from './rocket'
-import { Comma } from './comma'
-import { Search } from './search'
+import { Rocket } from './components/interactions/rocket'
+import { Comma } from './components/interactions/comma'
+import { CodePen, Email, Github, LinkedIn, Spotify } from './components/svgs'
 
 const songs: string[] = [
     'Lisbon - Slim & The Beast',
@@ -113,12 +113,7 @@ export default function Home() {
                         }
                     >
                         <div className={'min-w-fit'}>
-                            <Image
-                                src={'/spotify.svg'}
-                                alt={'Spotify logo.'}
-                                width={44}
-                                height={44}
-                            />
+                            <Spotify classes={'w-12 h-12'} />
                         </div>
 
                         <div
@@ -149,12 +144,7 @@ export default function Home() {
                         target={'_blank'}
                         rel={'noopener noreferrer'}
                     >
-                        <Image
-                            src={'/email.svg'}
-                            alt={'Envelope'}
-                            width={28}
-                            height={28}
-                        />
+                        <Email classes={'w-8 h-8'} />
                     </a>
                     <a
                         className={'opacity-30 hover:opacity-100'}
@@ -162,12 +152,7 @@ export default function Home() {
                         target={'_blank'}
                         rel={'noopener noreferrer'}
                     >
-                        <Image
-                            src={'/github.svg'}
-                            alt={'Github Logo'}
-                            width={28}
-                            height={28}
-                        />
+                        <Github classes={'w-8 h-8'} />
                     </a>
                     <a
                         className={'opacity-30 hover:opacity-100'}
@@ -177,12 +162,7 @@ export default function Home() {
                         target={'_blank'}
                         rel={'noopener noreferrer'}
                     >
-                        <Image
-                            src={'/linkedin.svg'}
-                            alt={'LinkedIn Logo'}
-                            width={28}
-                            height={28}
-                        />
+                        <LinkedIn classes={'w-8 h-8'} />
                     </a>
                     <a
                         className={'opacity-30 hover:opacity-100'}
@@ -190,12 +170,7 @@ export default function Home() {
                         target={'_blank'}
                         rel={'noopener noreferrer'}
                     >
-                        <Image
-                            src={'/codepen.svg'}
-                            alt={'Codepen Logo'}
-                            width={28}
-                            height={28}
-                        />
+                        <CodePen classes={'w-8 h-8'} />
                     </a>
                 </div>
 
