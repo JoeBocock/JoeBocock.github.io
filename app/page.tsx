@@ -4,7 +4,7 @@ import { Rocket } from './components/interactions/rocket'
 import { Comma } from './components/interactions/comma/comma'
 import { CodePen, Email, Github, LinkedIn } from './components/svgs'
 import SongMarquee from './components/interface/song-marquee'
-import { Search } from './components/interface/search/search'
+import { Navigator } from './components/interface/navigator'
 
 export default function Home() {
     return (
@@ -15,7 +15,7 @@ export default function Home() {
                 }
             >
                 <div className={'text-xl flex ml-auto'}>
-                    <Search />
+                    <Navigator />
                 </div>
 
                 <div className={'md:max-w-[65%]'}>
