@@ -1,3 +1,4 @@
+import styles from './styles.module.css'
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -17,13 +18,13 @@ export function Rocket() {
             <span className={'select-none cursor-pointer'} onClick={onClick}>
                 .
             </span>
-            <div className={showResults ? 'is-flying' : 'hidden'}>
+            <div className={showResults ? styles.flying : 'hidden'}>
                 <Image
                     src={'/gifs/rocket.gif'}
                     alt={'Pixel art rocket'}
                     width={84}
                     height={84}
-                    className={'pixel-art'}
+                    className={styles.pixelated}
                 />
             </div>
         </span>

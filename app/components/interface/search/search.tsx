@@ -1,4 +1,4 @@
-import { KeyboardEvent, useState } from 'react'
+import { useState } from 'react'
 
 export function Search() {
     const [visible, setVisible] = useState(false)
