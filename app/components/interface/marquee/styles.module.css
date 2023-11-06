@@ -1,34 +1,34 @@
 .marquee {
-    font-size: 2rem;
-    --gap: 1rem;
-    position: relative;
-    display: flex;
-    overflow: hidden;
-    user-select: none;
-    gap: var(--gap);
-    max-width: fit-content;
+  font-size: 2rem;
+  --gap: 1rem;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  max-width: fit-content;
 }
 
 .content {
-    flex-shrink: 0;
-    display: flex;
-    justify-content: space-around;
-    gap: var(--gap);
-    min-width: 100%;
-    animation: scroll 10s linear infinite;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  animation: scroll 10s linear infinite;
 }
 
 @keyframes scroll {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(calc(-100% - var(--gap)));
-    }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .content {
-        animation-play-state: paused !important;
-    }
+  .content {
+    animation-play-state: paused !important;
+  }
 }

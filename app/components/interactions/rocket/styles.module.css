@@ -1,29 +1,29 @@
 .pixelated {
-    image-rendering: pixelated;
+  image-rendering: pixelated;
 }
 
 .flying {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .flying > * {
-    animation: fly 4s linear;
-    pointer-events: none !important;
-    top: 0;
-    left: 0;
-    transform: translateX(-120%) translateY(-120%) rotateZ(0);
-    position: fixed;
-    animation-delay: 1s;
-    z-index: 999999;
+  animation: fly 4s linear;
+  pointer-events: none !important;
+  top: 0;
+  left: 0;
+  transform: translateX(-120%) translateY(-120%) rotateZ(0);
+  position: fixed;
+  animation-delay: 1s;
+  z-index: 999999;
 }
 
 @keyframes fly {
-    0% {
-        display: block;
-        transform: translateX(-200%) translateY(100vh) rotateZ(45deg);
-    }
+  0% {
+    display: block;
+    transform: translateX(-200%) translateY(100vh) rotateZ(45deg);
+  }
 
-    95% {
-        transform: translateX(110vw) translateY(-100%) rotateZ(70deg);
-    }
+  95% {
+    transform: translateX(110vw) translateY(-100%) rotateZ(70deg);
+  }
 }

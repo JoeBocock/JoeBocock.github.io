@@ -1,3 +1,3 @@
 export type ClassesProps = {
-    classes?: string
+  classes?: string
 }
